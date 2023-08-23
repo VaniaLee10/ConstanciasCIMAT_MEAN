@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 240%;
+    text-align: center;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #ca2e29;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+th:hover {
+    background-color: #97221E;
+}
+
+tr {
+    background-color: #f5f2e7;
+    font-size: 18px;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f2e7;
+}
+
+
+.search-container {
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.search-container input[type=text] {
+    float: right;
+    padding: 10px;
+    border: none;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+
+.logo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo img {
+    max-width: 220px;
+}
+
+
+.btn {
+    border: none;
+    /* Remove borders */
+    border-radius: 5px;
+    color: white;
+    /* Add a text color */
+    padding: 14px 28px;
+    /* Add some padding */
+    cursor: pointer;
+    /* Add a pointer cursor on mouse-over */
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.eliminar {
+    background-color: #97221E;
+}
+
+.eliminar:hover {
+    background-color: #631613;
+}
+
+.editar {
+    background-color: #d2b96b;
+}
+
+.editar:hover {
+    background-color: #dad673;
+}
+
+.constancia {
+    background-color: #04AA6D;
+}
+
+.constancia:hover {
+    background-color: #46a049;
+}
+
+.importar_excel {
+    background-color: #ca2e29;
+}
+
+.importar_excel:hover {
+    background-color: #97221E;
+}
+
+.exportar_excel {
+    background-color: #E59794;
+}
+
+.exportar_excel:hover {
+    background-color: #ca2e29;
+}
+
+.envio_constancias {
+    background-color: #dad673;
+}
+
+.envio_constancias:hover {
+    background-color: #d2b96b;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
