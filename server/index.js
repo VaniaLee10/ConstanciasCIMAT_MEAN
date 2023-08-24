@@ -1,9 +1,11 @@
 const express = require('express');
 const morgan = require('morgan');
+const path = require('path');
+
 const app = express();
 
 // Database
-//const { mongoose } = require('./database'); //errores
+const { mongoose } = require('./database'); //errores
 
 // Settings
 app.set('port', process.env.PORT || 3000);
@@ -11,25 +13,17 @@ app.set('port', process.env.PORT || 3000);
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: true }));
+// Static Files
+// Motor de plantillas
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static( path.join(__dirname, '/views/static')));
 
 // Routes
 app.use('/constancias',require('./routes/constancias.routes'));
-
-// Static Files
-// Motor de plantillas
-app.use(express.static('C:\\Users\\Eduardo\\OneDrive\\Documentos\\CIMAT\\MirnaConstancias\\ConstanciasCIMAT\\frontend\\static'))
-
-app.set('view engine', 'ejs');
-app.set('views', 'C:\\Users\\Eduardo\\OneDrive\\Documentos\\CIMAT\\MirnaConstancias\\ConstanciasCIMAT\\frontend\\views');
-app.get('/tabla', (req, res) => {
-    res.render('tabla.ejs');
-});
-
-app.get('/login', (req, res) => {
-    res.render('login.ejs');
-});
-
+app.use('/admin',require('./routes/admin.routes'));
+app.use('/',require('./routes/external.routes'));
 
 // Starting the server
 app.listen(app.get('port'), () => {
