@@ -14,7 +14,7 @@ adminShema.methods.generateHash = function (password) {
 
 /** validar cotraseña encriptada */
 userShema.methods.validatePassword = function (password) {
-	return bcrypt.compareSync(password,this.password);
+	return bcrypt.compareSync(password,this.pass);
 }
 
 module.exports = mongoose.model('admin',adminShema); // coleccion , esquema
