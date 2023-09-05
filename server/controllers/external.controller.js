@@ -16,16 +16,14 @@ externalCtrl.buscarUsuario = (req, res) => {
             });
         }else{
             if(AdminModel.validatePassword(pass)){
-                res.json(userFind);
+                res.redirect('admin');
             }else{
                 res.json({
                     "status" : "0"
                 });
             }
         }
-    })
-
-    res.redirect('admin');
+    });
 }
 
 module.exports = externalCtrl;
