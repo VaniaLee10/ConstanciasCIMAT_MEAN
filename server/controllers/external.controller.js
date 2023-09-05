@@ -6,11 +6,11 @@ externalCtrl.login = (req, res) => {
     res.render('login');
 }
 
-externalCtrl.buscarUsuario = (req, res) => {
+externalCtrl.buscarUsuario = async (req, res) => {
     const user = req.body.username
     const pass = req.body.password
 
-    const userFind = AdminModel.findOne({ 'user': user });
+    const userFind = await AdminModel.findOne({ 'user': user });
     if (!userFind) {
         res.json({
             "status": "0"

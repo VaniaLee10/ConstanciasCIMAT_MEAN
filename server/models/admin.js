@@ -6,4 +6,4 @@ let adminShema = new Schema({
     'pass' : { type : String , required: true},
 });
 
-module.exports = mongoose.model('admin',adminShema); // coleccion , esquema
+module.exports = mongoose.model('admins',adminShema); // coleccion , esquema
