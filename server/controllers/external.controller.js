@@ -17,7 +17,9 @@ externalCtrl.buscarUsuario = (req, res) => {
         });
     } else {
         const passUser = userFind.pass === undefined ? null : userFind.pass;
-        if (passUser != null && validatePassword(pass, passUser)) {
+        console.log(passUser)
+        console.log(userFind.user)
+        if (passUser != null && passUser == pass) {
             res.redirect('admin');
         } else {
             res.json({
