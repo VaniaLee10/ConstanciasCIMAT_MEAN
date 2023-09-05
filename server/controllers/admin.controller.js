@@ -1,4 +1,6 @@
 const adminCtrl = {};
+const Herramientas = require('./herramientas');
+
 const AdminModel = require('../models/admin');
 
 adminCtrl.home = (req, res) => {
@@ -8,7 +10,7 @@ adminCtrl.home = (req, res) => {
 adminCtrl.createAdmin = async (req, res) => {
     const newUser = new AdminModel();
     newUser.user = "Vani";
-    newUser.pass = "Vani1";
+    newUser.pass = Herramientas.generateHash('Vani');
     newUser.save();
 
     res.json(newUser);

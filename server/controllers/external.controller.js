@@ -1,6 +1,7 @@
 const externalCtrl = {};
+const Herramientas = require('./herramientas');
+
 const AdminModel = require('../models/admin');
-const bcrypt = require('bcrypt-nodejs');
 
 externalCtrl.login = (req, res) => {
     res.render('login');
@@ -17,9 +18,7 @@ externalCtrl.buscarUsuario = async (req, res) => {
         });
     } else {
         const passUser = userFind.pass === undefined ? null : userFind.pass;
-        console.log(passUser)
-        console.log(userFind.user)
-        if (passUser != null && passUser == pass) {
+        if (passUser != null && Herramientas.validatePassword(pass, passUser)) {
             res.redirect('admin');
         } else {
             res.json({
@@ -28,13 +27,5 @@ externalCtrl.buscarUsuario = async (req, res) => {
         }
     }
 }
-
-validatePassword = (password, pass) => {
-	return bcrypt.compareSync(password, pass);
-};
-
-generateHash = (password) => {
-	return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-};
 
 module.exports = externalCtrl;
