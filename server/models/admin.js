@@ -12,4 +12,9 @@ adminShema.methods.generateHash = function (password) {
 	return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 }
 
+/** validar cotraseña encriptada */
+userShema.methods.validatePassword = function (password) {
+	return bcrypt.compareSync(password,this.password);
+}
+
 module.exports = mongoose.model('admin',adminShema); // coleccion , esquema
