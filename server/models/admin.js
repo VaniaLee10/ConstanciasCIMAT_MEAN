@@ -13,7 +13,7 @@ adminShema.methods.generateHash = function (password) {
 }
 
 /** validar cotraseña encriptada */
-userShema.methods.validatePassword = function (password) {
+adminShema.methods.validatePassword = function (password) {
 	return bcrypt.compareSync(password,this.pass);
 }
 
