@@ -4,7 +4,12 @@ const Herramientas = require('./herramientas');
 const AdminModel = require('../models/admin');
 
 externalCtrl.login = (req, res) => {
-    res.render('login');
+    const error = {
+        status: true,
+        text: 'No existe el usuario'
+    };
+
+    res.render('login', { error: error });
 }
 
 externalCtrl.buscarUsuario = async (req, res) => {
@@ -13,17 +18,23 @@ externalCtrl.buscarUsuario = async (req, res) => {
 
     const userFind = await AdminModel.findOne({ 'user': user });
     if (!userFind) {
-        res.json({
-            "status": "0"
-        });
+        const error = {
+            status: false,
+            text: 'No existe el usuario'
+        };
+
+        res.render('login', { error: error });
     } else {
         const passUser = userFind.pass === undefined ? null : userFind.pass;
         if (passUser != null && Herramientas.validatePassword(pass, passUser)) {
             res.redirect('admin');
         } else {
-            res.json({
-                "status": "0"
-            });
+            const error = {
+                status: false,
+                text: 'No existe pass'
+            };
+
+            res.render('login', { error: error });
         }
     }
 }
