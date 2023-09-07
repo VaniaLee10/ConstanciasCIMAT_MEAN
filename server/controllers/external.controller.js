@@ -6,7 +6,8 @@ const AdminModel = require('../models/admin');
 externalCtrl.login = (req, res) => {
     const error = {
         status: true,
-        text: 'No existe el usuario'
+        text: '',
+        username: ''
     };
 
     res.render('login', { error: error });
@@ -20,7 +21,8 @@ externalCtrl.buscarUsuario = async (req, res) => {
     if (!userFind) {
         const error = {
             status: false,
-            text: 'No existe el usuario'
+            text: 'Usuario o Contraseña incorrecta',
+            username: user
         };
 
         res.render('login', { error: error });
@@ -31,7 +33,8 @@ externalCtrl.buscarUsuario = async (req, res) => {
         } else {
             const error = {
                 status: false,
-                text: 'No existe pass'
+                text: 'Usuario o Contraseña incorrecta',
+                username: user
             };
 
             res.render('login', { error: error });
