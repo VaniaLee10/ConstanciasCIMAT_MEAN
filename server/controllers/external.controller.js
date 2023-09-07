@@ -14,6 +14,12 @@ externalCtrl.login = (req, res) => {
     res.render('login', { error: error });
 }
 
+externalCtrl.registro = (req, res) => {
+
+
+    res.render('external/registro.ejs');
+}
+
 externalCtrl.buscarUsuario = async (req, res) => {
     const user = req.body.username
     const pass = req.body.password
