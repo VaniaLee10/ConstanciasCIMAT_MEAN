@@ -1,5 +1,5 @@
 {
-  "name": "ConstanciasCIMAT",
+  "name": "constanciascimat",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,13 @@
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "description": ""
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VaniaLee10/ConstanciasCIMAT_MEAN.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VaniaLee10/ConstanciasCIMAT_MEAN/issues"
+  },
+  "homepage": "https://github.com/VaniaLee10/ConstanciasCIMAT_MEAN#readme"
 }
