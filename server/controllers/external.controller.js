@@ -2,6 +2,7 @@ const externalCtrl = {};
 const Herramientas = require('./herramientas');
 
 const AdminModel = require('../models/admin');
+const UserModel = require('../models/usuario');
 
 externalCtrl.login = (req, res) => {
     const error = {
@@ -37,6 +38,31 @@ externalCtrl.buscarUsuario = async (req, res) => {
             res.render('login', { error: error });
         }
     }
+}
+
+externalCtrl.createUser = async (req, res) => {
+
+    const nombre = req.body.nombre;
+    const apellido_paterno = req.body.apellido_paterno;
+    const apellido_materno = req.body.apellido_materno;
+
+    const newUser = new UserModel();
+
+    if (typeof nombre == 'string' && nombre != null ){
+        newUser.nombre = nombre;
+    }
+
+    if (typeof apellido_paterno == 'string' && apellido_paterno != null){
+        newUser.apellido_paterno = apellido_paterno;
+    }
+
+    if (typeof apellido_materno == 'string' && apellido_materno != null){
+        newUser.apellido_materno = apellido_materno;
+    }
+
+    
+    newUser.save();
+    res.json(newUser);
 }
 
 module.exports = externalCtrl;
