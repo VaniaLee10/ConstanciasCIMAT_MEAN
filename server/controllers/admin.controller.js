@@ -3,8 +3,14 @@ const Herramientas = require('./herramientas');
 
 const AdminModel = require('../models/admin');
 
-adminCtrl.home = (req, res) => {
-    res.render('tabla.ejs');
+const UserModel = require('../models/usuario');
+
+adminCtrl.home = async (req, res) => {
+
+    const users = await UserModel.find();
+    console.log(users);
+
+    res.render('admin/tabla.ejs', {users: users});
 }
 
 adminCtrl.createAdmin = async (req, res) => {
