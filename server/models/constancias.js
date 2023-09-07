@@ -2,12 +2,13 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const ConstanciaSchema = new Schema({
-    nombre: { type: String, required: true },
-    apellido: { type: String, required: true },
-    correo: { type: String, required: true },
-    telefono: { type: String, required: true },
-    institucion: { type: String, required: true },
-    constancia: { type: String, required: true }
+    'id': { type: String, required: true },
+    'id_usuario': { type: String, required: true },
+    'periodo_año': { type: Date, required: true },
+    'status': { type: String, required: true },
+    'id_configuracion': { type: String, required: true },
+    'creacion': { type: Date, required: true },
+    'actualizacion': { type: Date, required: true },
 });
 
-module.exports = mongoose.model('Constancia', ConstanciaSchema);
+module.exports = mongoose.model('constancia', ConstanciaSchema);
