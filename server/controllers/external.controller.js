@@ -2,7 +2,10 @@ const externalCtrl = {};
 const Herramientas = require('./herramientas');
 
 const AdminModel = require('../models/admin');
-
+// checkout
+// rama
+//feautre/SEP2023/Ext.Agregar.VSL.07.09.23
+// feature/SEP2023/Ext.Vista.AFJ.07.09.23
 externalCtrl.login = (req, res) => {
     const error = {
         status: true,
@@ -10,6 +13,12 @@ externalCtrl.login = (req, res) => {
     };
 
     res.render('login', { error: error });
+}
+
+externalCtrl.registro = (req, res) => {
+
+
+    res.render('external/registro.ejs');
 }
 
 externalCtrl.buscarUsuario = async (req, res) => {
