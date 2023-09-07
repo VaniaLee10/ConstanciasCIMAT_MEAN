@@ -48,6 +48,24 @@
                     <!-- Aquí puedes generar los 50 elementos de la tabla usando un bucle -->
                     <!-- Por ejemplo, usando JavaScript para agregar datos automáticamente -->
                     <!-- Puedes modificar este código según tus datos reales -->
+
+                    <% users.forEach(function(user){ %>
+                        <tr>
+                            <td><%= user.nombre %> <%= user.apellido_paterno %></td>
+                            <td>
+                                <button class="btn constancia" id="button_constancia"
+                                    onclick="modal_visualizacion(1)">Constancia</button>
+                                <button class="btn editar" id="modalconstconfig"
+                                    onclick="modalconstanciasconfig()">Enviar</button>
+                            </td>
+                            <td>
+                                <button class="btn eliminar">Eliminar</button>
+                                <button class="btn editar" id="editarUsuario"
+                                    onclick="modalEditarUsuario()">Editar</button>
+                            </td>
+                        </tr>
+                        <% }); %>
+                            <!--
                     <tr>
                         <td>Elemento 1</td>
                         <td>
@@ -87,7 +105,8 @@
                             <button class="btn editar" id="editarUsuario" onclick="modalEditarUsuario()">Editar</button>
                         </td>
                     </tr>
-                    <!-- ... Repite los 50 elementos aquí ... -->
+                    -->
+                            <!-- ... Repite los 50 elementos aquí ... -->
                 </tbody>
             </table>
         </div>
