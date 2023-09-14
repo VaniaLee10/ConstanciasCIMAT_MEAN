@@ -2,14 +2,15 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/table.css">
     <link rel="shortcut icon" href="img/icono.png">
     <link rel="stylesheet" href="css/modal_visualizacion.css">
     <link rel="stylesheet" href="css/modal_excel.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
-
     <script src="script/modal_visualizacion.js"></script>
     <script src="script/table.js"></script>
+    <script src="script/paginado.js"></script>
     <title>Tabla Ordenable</title>
 </head>
 
@@ -22,12 +23,9 @@
         <div class="table-container" style="overflow-y:auto">
             <div>
                 <div class="row">
-                    <button class="btn importar_excel" id="openexcel" onclick="modalimportar()">Importar a
-                        Excel</button>
-                    <button class="btn exportar_excel" id="exportar" onclick="modal_exportar_excel()">Exportar a
-                        Excel</button>
-                    <button class="btn envio_constancias" id="envio_constancias"
-                        onclick="modal_envio_constancias()">Enviar Masivo</button>
+                    <button class="btn importar_excel" id="openexcel" onclick="modalimportar()">Importar a Excel</button>
+                    <button class="btn exportar_excel" id="exportar" onclick="modal_exportar_excel()">Exportar a Excel</button>
+                    <button class="btn envio_constancias" id="envio_constancias" onclick="modal_envio_constancias()">Enviar Masivo</button>
                 </div>
                 <p></p>
             </div>
@@ -43,76 +41,107 @@
                         <th onclick="sortTable(1)">Constancia</th>
                         <th onclick="sortTable(2)">Datos del Usuario</th>
                     </tr>
+                    
                 </thead>
                 <tbody>
-                    <!-- Aquí puedes generar los 50 elementos de la tabla usando un bucle -->
+                    <!-- Aquí puedes generar los elementos de la tabla usando un bucle y JavaScript -->
                     <!-- Por ejemplo, usando JavaScript para agregar datos automáticamente -->
                     <!-- Puedes modificar este código según tus datos reales -->
 
-                    <% users.forEach(function(user){ %>
+                    <% 
+                    // Supongamos que users es un arreglo con todos los usuarios
+                    var usersPerPage = 50; // Número de usuarios por página
+                    var currentPage = 1; // Página actual
+                    var startIdx = (currentPage - 1) * usersPerPage;
+                    var endIdx = currentPage * usersPerPage;
+
+                    users.slice(startIdx, endIdx).forEach(function(user){ %>
                         <tr>
                             <td><%= user.nombre %> <%= user.apellido_paterno %></td>
                             <td>
-                                <button class="btn constancia" id="button_constancia"
-                                    onclick="modal_visualizacion(1)">Constancia</button>
-                                <button class="btn editar" id="modalconstconfig"
-                                    onclick="modalconstanciasconfig()">Enviar</button>
+                                <button class="btn constancia" id="button_constancia" onclick="modal_visualizacion(1)">Constancia</button>
+                                <button class="btn editar" id="modalconstconfig" onclick="modalconstanciasconfig()">Enviar</button>
                             </td>
                             <td>
                                 <button class="btn eliminar">Eliminar</button>
-                                <button class="btn editar" id="editarUsuario"
-                                    onclick="modalEditarUsuario()">Editar</button>
+                                <button class="btn editar" id="editarUsuario" onclick="modalEditarUsuario()">Editar</button>
                             </td>
                         </tr>
-                        <% }); %>
-                            <!--
-                    <tr>
-                        <td>Elemento 1</td>
-                        <td>
-                            <button class="btn constancia" id="button_constancia"
-                                onclick="modal_visualizacion(1)">Constancia</button>
-                            <button class="btn editar" id="modalconstconfig"
-                                onclick="modalconstanciasconfig()">Enviar</button>
-                        </td>
-                        <td>
-                            <button class="btn eliminar">Eliminar</button>
-                            <button class="btn editar" id="editarUsuario" onclick="modalEditarUsuario()">Editar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Alemento 2</td>
-                        <td>
-                            <button class="btn constancia" id="button_constancia"
-                                onclick="modal_visualizacion(2)">Constancia</button>
-                            <button class="btn editar" id="modalconstconfig"
-                                onclick="modalconstanciasconfig()">Enviar</button>
-                        </td>
-                        <td>
-                            <button class="btn eliminar">Eliminar</button>
-                            <button class="btn editar" id="editarUsuario" onclick="modalEditarUsuario()">Editar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Elemento 3</td>
-                        <td>
-                            <button class="btn constancia" id="button_constancia"
-                                onclick="modal_visualizacion(3)">Constancia</button>
-                            <button class="btn editar" id="modalconstconfig"
-                                onclick="modalconstanciasconfig()">Enviar</button>
-                        </td>
-                        <td>
-                            <button class="btn eliminar">Eliminar</button>
-                            <button class="btn editar" id="editarUsuario" onclick="modalEditarUsuario()">Editar</button>
-                        </td>
-                    </tr>
-                    -->
-                            <!-- ... Repite los 50 elementos aquí ... -->
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                    <% }); %>
                 </tbody>
             </table>
-        </div>
 
-        <img style="visibility: hidden;" id="myImg" src="img/CertificadoSMCC.jpg" alt="Constancia"
-            style="width:100%;max-width:300px">
+            <!-- Agregar la paginación aquí -->
+            <div class="pagination">
+                <button onclick="prevPage()">Anterior</button>
+                <button onclick="nextPage()">Siguiente</button>
+            </div>
+        </div>
+        
+        <img style="display: none;" id="myImg" src="img/CertificadoSMCC.jpg" alt="Constancia" style="width:100%;max-width:300px">
+    </div>
+
+
 
 
 

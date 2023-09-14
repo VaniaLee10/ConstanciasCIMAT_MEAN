@@ -77,7 +77,7 @@ tr:nth-child(even) {
     border: none;
     /* Remove borders */
     border-radius: 5px;
-    color: white;
+    color: rgb(255, 255, 255);
     /* Add a text color */
     padding: 14px 28px;
     /* Add some padding */
@@ -88,11 +88,13 @@ tr:nth-child(even) {
 }
 
 .eliminar {
-    background-color: #97221E;
+    background-color: #ca2e29;
+    color: rgb(255, 255, 255);
 }
 
 .eliminar:hover {
-    background-color: #631613;
+    background-color: #97221E;
+    color: rgb(255, 255, 255);
 }
 
 .editar {
