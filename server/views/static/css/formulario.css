@@ -1,0 +1,131 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para etiquetas y campos de entrada */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Estilos para botones y radios/checkboxes */
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Estilos para campos de carga de archivos */
+input[type="file"] {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Estilos para campos de texto de comentario */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Estilos para opciones del select */
+select {
+    font-size: 16px;
+}
+
+
+/* Estilos para checkboxes en línea */
+.checkbox-inline {
+    display: inline-block;
+    vertical-align: middle; /* Alinear verticalmente el texto con el checkbox */
+    margin-right: 10px; /* Espacio entre los checkboxes */
+}
+
+/* Estilos para los labels de los checkboxes en línea */
+.checkbox-inline label {
+    display: inline;
+    font-weight: normal;
+    margin-left: 3px; /* Espacio entre el checkbox y el texto */
+}
+
+/* Estilos para radios en línea */
+.radio-inline {
+    display: inline-block;
+    vertical-align: middle; /* Alinear verticalmente el texto con el radio */
+    margin-right: 10px; /* Espacio entre los radios */
+}
+
+/* Estilos para los labels de los radios en línea */
+.radio-inline label {
+    display: inline;
+    font-weight: normal;
+    margin-left: 3px; /* Espacio entre el radio y el texto */
+}
+/* Agrega estilos a los grupos de checkboxes */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Espaciado entre los grupos de checkboxes */
+}
+
+/* Estilos para checkboxes individuales */
+.checkbox-group input[type="checkbox"] {
+    margin-right: 5px; /* Espaciado entre el checkbox y la etiqueta */
+}
+
+/* Estilos para las etiquetas de los checkboxes */
+.checkbox-group label {
+    order: 1; /* Cambia el orden de la etiqueta para que aparezca a la derecha */
+}
+
+.logo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo img {
+    max-width: 220px;
+}

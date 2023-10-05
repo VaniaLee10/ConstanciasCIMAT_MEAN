@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario SMCC</title>
+    <link rel="shortcut icon" href="img/icono.png">
+    <link rel="stylesheet" href="css/formulario.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo.png" alt="Sociedad Mexicana de Ciencia de Computación">
+        </div>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <div class="form-group">
+                <label for="correo-institucional">Correo institucional:</label>
+                <input type="email" id="correo-institucional" name="correo-institucional" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido-paterno">Apellido Paterno:</label>
+                <input type="text" id="apellido-paterno" name="apellido-paterno" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido-materno">Apellido Materno:</label>
+                <input type="text" id="apellido-materno" name="apellido-materno" required>
+            </div>
+            <div class="form-group">
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero">
+                    <option value="Mujer">Mujer</option>
+                    <option value="Hombre">Hombre</option>
+                    <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+                </select>
+            </div>            
+            <div class="form-group">
+                <label for="miembro-smcc">¿Es miembro actual de la SMCC o ha sido miembro en algún otro momento?</label>
+                <select id="miembro-smcc" name="miembro-smcc">
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="datos-membresia">Datos de membresía:</label>
+                <input type="text" id="datos-membresia" name="datos-membresia">
+            </div>
+            <div class="form-group">
+                <label for="tipo-membresia">Tipo de membresía:</label>
+                <select id="tipo-membresia" name="tipo-membresia">
+                    <option value="Socio titular">Socio titular</option>
+                    <option value="Solo estudiante">Solo estudiante</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="id-socio">ID socio (si no lo recuerda poner XX):</label>
+                <input type="text" id="id-socio" name="id-socio">
+            </div>
+            <!-- Continúa con los demás campos del formulario -->
+            <div class="form-group">
+                <label for="cambios-perfil">¿Has tenido cambios en tu perfil profesional en este último año?</label>
+                <select id="cambios-perfil" name="cambios-perfil">
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                </select>
+            </div>            
+            <!-- Continúa con los demás campos del formulario -->
+            <div class="form-group">
+                <label for="perfil-profesional">Perfil profesional:</label>
+                <input type="text" id="perfil-profesional" name="perfil-profesional" required>
+            </div>
+            <div class="form-group">
+                <label for="grado-estudio">Grado de estudio (actual o último):</label>
+                <select id="grado-estudio" name="grado-estudio">
+                    <option value="Licenciatura">Licenciatura</option>
+                    <option value="Maestría">Maestría</option>
+                    <option value="Doctorado">Doctorado</option>
+                    <option value="Otro">Otro...</option>
+                </select>
+            </div>            
+            <div class="form-group">
+                <label for="ocupacion">Ocupación:</label>
+                <select id="ocupacion" name="ocupacion">
+                    <option value="Estudiante">Estudiante</option>
+                    <option value="Profesor(a)">Profesor(a)</option>
+                    <option value="Profesor(a) e investigador(a)">Profesor(a) e investigador(a)</option>
+                    <option value="Empresario">Empresario</option>
+                    <option value="Empleado">Empleado</option>
+                    <option value="Funcionario">Funcionario</option>
+                    <option value="Otro">Otro...</option>
+                </select>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="institucion-procedencia">Institución de procedencia:</label>
+                <input type="text" id="institucion-procedencia" name="institucion-procedencia" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="estado-republica">Estado de la República que radica:</label>
+                <select id="estado-republica" name="estado-republica">
+                    <option value="Zacatecas">Zacatecas</option>
+                    <option value="Aguascalientes">Aguascalientes</option>
+                    <option value="Guanajuato">Guanajuato</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="area-interes">Área de interés:</label>
+                <input type="text" id="area-interes" name="area-interes" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="eventos-smcc">¿Qué tipo de eventos le gustaría que se organizaran por parte de la SMCC?</label>
+                <input type="text" id="eventos-smcc" name="eventos-smcc" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="colaborar-smcc">¿Le gustaría colaborar con la SMCC en algún evento?</label>
+                <input type="text" id="colaborar-smcc" name="colaborar-smcc" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="motivo-adhesion-smcc">Comparta el motivo de su intención por adherirse a la SMCC:</label>
+                <input type="text" id="motivo-adhesion-smcc" name="motivo-adhesion-smcc" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="documentacion-estudiante">Documentación como estudiante:</label>
+                <input type="text" id="documentacion-estudiante" name="documentacion-estudiante" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="credencial-estudiante">Credencial que te acredite como estudiante:</label>
+                <input type="file" id="credencial-estudiante" name="credencial-estudiante" accept=".pdf,.jpg,.png" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="comprobante-pago-membresia">Comprobante de pago de membresía:</label>
+                <input type="file" id="comprobante-pago-membresia" name="comprobante-pago-membresia" accept=".pdf,.jpg,.png" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="comprobante-pago">Comprobante de otro tipo de pago:</label>
+                <input type="file" id="comprobante-pago" name="comprobante-pago" accept=".pdf,.jpg,.png" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="comentario">Si tiene algún comentario, favor de escribirlo aquí:</label>
+                <input type="text" id="comentario" name="comentario">
+            </div>
+            
+            <!-- Agrega los estilos CSS correspondientes en tu archivo styles.css -->
+            
+            <div class="form-group">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
